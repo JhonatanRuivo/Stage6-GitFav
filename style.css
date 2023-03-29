@@ -6,11 +6,144 @@
 
 :root {
   font-size: 62.5%;
-  --bg-body: #303030;
+  --bg-color: linear-gradient(0deg, #303030 0%, rgb(21, 21, 21) 100%);
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #dbdbdb;
+  --primary-color: hsl(189, 100%, 26%);
+  --secondary-color: rgb(0, 36, 44);
+  
+}
+
+body * {
+  font-family: var(--ff-primary);
+  color: var(--text-color);
 }
 
 body {
   font-size: 1.6rem;
+  height: 100vh;
+  background: var(--bg-color);
+  
+}
 
-  background-color: var(--bg-body);
+#app {
+  padding: 2rem;
+  max-width: 105rem;
+  margin: 0 auto;
+}
+
+header {
+  margin: 4rem 0 8rem;
+  height: 4.8rem;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.search {
+  height: 100%;
+  display: flex;
+  gap: .8rem;
+}
+.search input {
+  height: 4.8rem;
+  width: 46rem;
+
+ border: none;
+ border-radius: .5rem;
+ padding: 1.6rem;
+
+  background: rgba(44, 55, 57, 0.345);
+}
+.search button {
+  height: 4.8rem;
+  width: 17rem;
+  padding: 1.2rem 3.2rem;
+
+  
+  border: none;
+  border-radius: .5rem;
+  background: linear-gradient(38deg,hsl(189, 100%, 26%) 0%, rgb(0, 36, 44) 100%);
+
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: space-between;
+  
+}
+.search button:hover {
+  background: var(--text-color);
+  color: var(--primary-color) ;
+}
+.search button:hover svg path {
+  fill: var(--primary-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 1rem 2rem -1rem var(--secondary-color);
+  max-height: 38.2rem;
+  
+}
+thead th {
+  background: var(--secondary-color);
+  height: 6rem;
+  text-align: start;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.6rem 3rem; 
+}
+thead th:first-child {
+  border-top-left-radius: 1.2rem;
+}
+thead th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+tbody tr {
+  background: #1c1c1c;
+
+}
+tbody tr:nth-child(odd) {
+  background: #303030;
+}
+tbody td {
+  padding: 1.5rem 3rem;
+  text-align: left;
+}
+td.user {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+td.user a {
+  text-decoration: none;
+} 
+td.user a p {
+  font-weight: bold;
+}
+
+td.remove button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: rgb(255, 0, 119);
+  cursor: pointer;
+}
+td.remove button:hover {
+  transform: scale(1.1);
+  transition: 150ms;
+  
 }
